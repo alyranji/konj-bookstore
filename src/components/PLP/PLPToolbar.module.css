@@ -1,0 +1,160 @@
+.toolbarContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 24px;
+
+  & .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+
+    & .crumbLink {
+      color: var(--gray-300);
+      transition: color var(--transition-fast);
+
+      &:hover {
+        color: var(--primary-700);
+      }
+    }
+
+    & .crumbSep {
+      color: var(--gray-40);
+    }
+
+    & .crumbActive {
+      color: var(--gray-950);
+      font-weight: 700;
+    }
+  }
+
+  & .sortBar {
+    background-color: var(--gray-5);
+    border: 1px solid var(--gray-20);
+    border-radius: var(--radius-md);
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-sm);
+    gap: 16px;
+
+    @media (max-width: 992px) {
+      flex-wrap: wrap;
+      padding: 10px 14px;
+    }
+
+    & .sortOptions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      @media (max-width: 992px) {
+        overflow-x: auto;
+        width: 100%;
+        padding-bottom: 6px;
+      }
+
+      & .sortLabelGroup {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-shrink: 0;
+
+        & .sortIconIndicator {
+          font-size: 16px;
+          color: var(--primary-700);
+          font-weight: 800;
+        }
+
+        & .sortLabel {
+          font-size: 13px;
+          color: var(--gray-500);
+          font-weight: 600;
+        }
+      }
+
+      & .tabsList {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        & .tabBtn {
+          padding: 6px 12px;
+          border-radius: var(--radius-sm);
+          font-size: 13px;
+          color: var(--gray-500);
+          font-weight: 500;
+          background: transparent;
+          transition: all var(--transition-fast);
+          white-space: nowrap;
+
+          &:hover {
+            color: var(--primary-700);
+            background-color: var(--primary-50);
+          }
+
+          &.activeTab {
+            background-color: var(--primary-700);
+            color: var(--gray-5);
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    & .stats {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+
+      @media (max-width: 992px) {
+        display: none;
+      }
+
+      & .countNumber {
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--gray-950);
+      }
+
+      & .countText {
+        font-size: 12px;
+        color: var(--gray-300);
+      }
+    }
+
+    & .mobileFilterBtn {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background-color: var(--primary-50);
+      color: var(--primary-700);
+      border: 1px solid var(--primary-700);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+
+      @media (max-width: 992px) {
+        display: inline-flex;
+      }
+
+      & .filterPillBadge {
+        background-color: var(--primary-700);
+        color: white;
+        font-size: 10px;
+        border-radius: var(--radius-full);
+        width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

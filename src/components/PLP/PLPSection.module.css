@@ -1,0 +1,114 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 36px;
+
+  & .titleBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--gray-5);
+    border: 1px solid var(--gray-20);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    box-shadow: var(--shadow-sm);
+
+    & .titleGroup {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      & .accentBar {
+        width: 4px;
+        height: 20px;
+        background-color: var(--primary-700);
+        border-radius: var(--radius-full);
+      }
+
+      & .title {
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--gray-950);
+
+        @media (max-width: 640px) {
+          font-size: 15px;
+        }
+      }
+
+      & .badge {
+        background-color: var(--primary-50);
+        color: var(--primary-700);
+        font-size: 11px;
+        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: var(--radius-full);
+      }
+    }
+
+    & .actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      & .viewAll {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--primary-700);
+        transition: transform var(--transition-fast);
+
+        &:hover {
+          transform: translateX(-3px);
+        }
+      }
+
+      & .navButtons {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        @media (max-width: 640px) {
+          display: none;
+        }
+
+        & .navBtn {
+          width: 30px;
+          height: 30px;
+          border-radius: var(--radius-sm);
+          border: 1px solid var(--gray-30);
+          background-color: var(--gray-5);
+          color: var(--gray-800);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all var(--transition-fast);
+
+          &:hover {
+            border-color: var(--primary-700);
+            color: var(--primary-700);
+            background-color: var(--primary-50);
+          }
+        }
+      }
+    }
+  }
+
+  & .carouselTrack {
+    display: flex;
+    align-items: stretch;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 4px 2px 14px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    @media (max-width: 640px) {
+      gap: 12px;
+      padding-bottom: 8px;
+    }
+  }
+}

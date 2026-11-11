@@ -118,7 +118,7 @@ export const Header: React.FC = () => {
 
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <Link href="#text-books" className={styles.navLink}>
+              <Link href="/books" className={styles.navLink}>
                 کتاب‌های متنی
               </Link>
             </li>

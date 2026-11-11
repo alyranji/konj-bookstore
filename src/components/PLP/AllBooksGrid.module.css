@@ -1,0 +1,138 @@
+.gridSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin-top: 12px;
+
+  & .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    & .titleGroup {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      & .accentBar {
+        width: 4px;
+        height: 20px;
+        background-color: var(--primary-700);
+        border-radius: var(--radius-full);
+      }
+
+      & .title {
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--gray-950);
+      }
+    }
+
+    & .subtitle {
+      font-size: 13px;
+      color: var(--gray-300);
+    }
+  }
+
+  & .booksGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    & .gridItem {
+      display: flex;
+      justify-content: center;
+
+      & > article {
+        width: 100%;
+        flex: 1 1 auto;
+      }
+    }
+  }
+
+  & .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 36px 0 20px;
+    padding-top: 24px;
+    border-top: 1px solid var(--gray-20);
+
+    & .pageBtn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background-color: var(--gray-5);
+      border: 1px solid var(--gray-30);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-800);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+
+      &:hover:not(.disabled) {
+        border-color: var(--primary-700);
+        color: var(--primary-700);
+        background-color: var(--primary-50);
+      }
+
+      &.disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+    }
+
+    & .pageNumbers {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      & .numberBtn {
+        width: 36px;
+        height: 36px;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--gray-30);
+        background-color: var(--gray-5);
+        color: var(--gray-800);
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+
+        &:hover {
+          border-color: var(--primary-700);
+          color: var(--primary-700);
+          background-color: var(--primary-50);
+        }
+
+        &.activeNumber {
+          background-color: var(--primary-700);
+          border-color: var(--primary-700);
+          color: white;
+          font-weight: 700;
+        }
+      }
+
+      & .dots {
+        color: var(--gray-300);
+        padding: 0 4px;
+      }
+    }
+  }
+}
