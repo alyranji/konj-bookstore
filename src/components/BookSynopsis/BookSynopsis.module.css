@@ -1,0 +1,165 @@
+.section {
+  width: 100%;
+  max-width: 1360px;
+  margin: 48px auto;
+  padding: 0 24px;
+
+  @media (max-width: 768px) {
+    margin: 32px auto;
+    padding: 0 16px;
+  }
+
+  & .container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  & .headerRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    & .titleGroup {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      & .accentBar {
+        width: 4px;
+        height: 24px;
+        background-color: var(--primary-700);
+        border-radius: var(--radius-full);
+      }
+
+      & .title {
+        font-size: 22px;
+        font-weight: 800;
+        color: var(--gray-950);
+
+        @media (max-width: 640px) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    & .subtitle {
+      font-size: 14px;
+      color: var(--gray-300);
+      font-weight: 500;
+    }
+  }
+
+  & .cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+
+  & .synopsisCard {
+    background-color: var(--gray-5);
+    border: 1px solid var(--gray-20);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    display: flex;
+    gap: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+
+    @media (max-width: 640px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 18px;
+    }
+
+    &:hover {
+      border-color: var(--primary-700);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+
+      & .readMore {
+        color: var(--primary-950);
+      }
+    }
+
+    & .coverSection {
+      flex-shrink: 0;
+
+      & .coverWrapper {
+        width: 100px;
+        height: 150px;
+        border-radius: var(--radius-sm);
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+        & .cover {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    & .textSection {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      gap: 12px;
+
+      & .cardHeader {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        & .bookTitle {
+          font-size: 18px;
+          font-weight: 800;
+          color: var(--gray-950);
+        }
+
+        & .author {
+          font-size: 13px;
+          color: var(--primary-700);
+          font-weight: 600;
+        }
+      }
+
+      & .synopsisText {
+        font-size: 13px;
+        line-height: 1.8;
+        color: var(--gray-500);
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-align: justify;
+      }
+
+      & .readMore {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--primary-700);
+        transition: color var(--transition-fast);
+        text-decoration: none;
+        margin-top: 4px;
+
+        @media (max-width: 640px) {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
